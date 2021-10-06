@@ -28,7 +28,7 @@ const Home = (props: Props) => {
         </Thead>
         <Tbody>
           {data?.users.map((user) => (
-            <Tr>
+            <Tr key={user.id}>
               <Td>{user.id}</Td>
               <Td>{user.username}</Td>
               <Td>{user.email}</Td>

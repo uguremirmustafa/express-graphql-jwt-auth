@@ -6,6 +6,7 @@ import App from './App';
 import { getAccessToken, setAccessToken } from './utils/accessToken';
 import { TokenRefreshLink } from 'apollo-link-token-refresh';
 import jwtDecode from 'jwt-decode';
+import { config } from './config';
 
 const tokenRefreshLink = new TokenRefreshLink({
   accessTokenField: 'accessToken', // field name from the response
@@ -30,8 +31,9 @@ const tokenRefreshLink = new TokenRefreshLink({
       return false;
     }
   },
+
   fetchAccessToken: () => {
-    return fetch('http://localhost:4000/refresh_token', {
+    return fetch(`${config.baseUrl}/refresh_token`, {
       method: 'POST',
       credentials: 'include',
     });
@@ -46,7 +48,7 @@ const tokenRefreshLink = new TokenRefreshLink({
 });
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: `${config.baseUrl}/graphql`,
   fetchOptions: {
     credentials: 'include',
   },

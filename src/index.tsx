@@ -6,7 +6,6 @@ import App from './App';
 import { getAccessToken, setAccessToken } from './utils/accessToken';
 import { TokenRefreshLink } from 'apollo-link-token-refresh';
 import jwtDecode from 'jwt-decode';
-// import { config } from './config';
 
 const tokenRefreshLink = new TokenRefreshLink({
   accessTokenField: 'accessToken', // field name from the response

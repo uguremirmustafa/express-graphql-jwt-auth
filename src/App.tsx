@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Routes from './Routes';
 import { setAccessToken } from './utils/accessToken';
-import { config } from './config';
 
 interface Props {}
 
 const App = (props: Props) => {
   const [loading, setLoading] = useState(true);
-  console.log(process.env.NODE_ENV);
-
-  console.log(config);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/refresh_token`, {

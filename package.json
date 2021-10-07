@@ -24,7 +24,7 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "dev": "BROWSER=none NODE_ENV=production react-scripts start",
+    "dev": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

@@ -12,7 +12,7 @@ const App = (props: Props) => {
   console.log(config);
 
   useEffect(() => {
-    fetch(`${process.env.SERVER_BASE_URL}/refresh_token`, {
+    fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/refresh_token`, {
       credentials: 'include',
       method: 'POST',
     }).then(async (x) => {

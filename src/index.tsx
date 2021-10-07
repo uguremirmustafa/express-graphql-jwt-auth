@@ -33,7 +33,7 @@ const tokenRefreshLink = new TokenRefreshLink({
   },
 
   fetchAccessToken: () => {
-    return fetch(`${process.env.SERVER_BASE_URL}/refresh_token`, {
+    return fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/refresh_token`, {
       method: 'POST',
       credentials: 'include',
     });
@@ -48,7 +48,7 @@ const tokenRefreshLink = new TokenRefreshLink({
 });
 
 const httpLink = createHttpLink({
-  uri: `${process.env.SERVER_BASE_URL}/graphql`,
+  uri: `${process.env.REACT_APP_SERVER_BASE_URL}/graphql`,
   fetchOptions: {
     credentials: 'include',
   },

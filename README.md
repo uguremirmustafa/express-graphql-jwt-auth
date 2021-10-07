@@ -30,7 +30,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/uguremirmustafa/express-graphql-jwt-auth">
-    <img src="./screenshots/graphql.png" alt="Logo" width="80" height="80">
+    <img src="./screenshots/register.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Client for express-graphql-jwt-auth-server</h3>
@@ -48,7 +48,7 @@
     <a href="https://github.com/uguremirmustafa/express-graphql-jwt-auth/issues">Request Feature</a>
   </p>
 </p>
-<a href="https://github.com/uguremirmustafa/express-graphql-jwt-auth">CLIENT CODE WITH REACT IS HERE</a>
+<a href="https://github.com/uguremirmustafa/express-graphql-jwt-auth">SERVER CODE WITH APOLLO-EXPRESS IS HERE</a>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">

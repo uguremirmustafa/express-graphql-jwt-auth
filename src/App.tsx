@@ -7,6 +7,9 @@ interface Props {}
 
 const App = (props: Props) => {
   const [loading, setLoading] = useState(true);
+  console.log(process.env.NODE_ENV);
+
+  console.log(config);
 
   useEffect(() => {
     fetch(`${config.baseUrl}/refresh_token`, { credentials: 'include', method: 'POST' }).then(

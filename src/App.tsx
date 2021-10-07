@@ -12,15 +12,16 @@ const App = (props: Props) => {
   console.log(config);
 
   useEffect(() => {
-    fetch(`${config.baseUrl}/refresh_token`, { credentials: 'include', method: 'POST' }).then(
-      async (x) => {
-        const { accessToken } = await x.json();
+    fetch(`${process.env.SERVER_BASE_URL}/refresh_token`, {
+      credentials: 'include',
+      method: 'POST',
+    }).then(async (x) => {
+      const { accessToken } = await x.json();
 
-        setAccessToken(accessToken);
+      setAccessToken(accessToken);
 
-        setLoading(false);
-      }
-    );
+      setLoading(false);
+    });
   }, []);
 
   if (loading) {

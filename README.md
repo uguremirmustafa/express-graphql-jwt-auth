@@ -80,7 +80,7 @@
 
 ## About The Project
 
-![express-graphql-jwt-auth Home Screen Shot](/screenshots/graphql.png)
+![express-graphql-jwt-auth Home Screen Shot](/screenshots/register.png)
 
 express-graphql-jwt-auth is built as a boilerplate code for starting graphql applications faster.
 

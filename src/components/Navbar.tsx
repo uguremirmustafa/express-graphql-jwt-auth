@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/button';
 import { Text, Flex } from '@chakra-ui/layout';
 import { Link } from 'react-router-dom';
-import { useLogoutMutation, useMeQuery } from '../generated/graphql';
+import { MeDocument, MeQuery, useLogoutMutation, useMeQuery } from '../generated/graphql';
 import { setAccessToken } from '../utils/accessToken';
 
 interface Props {}
@@ -10,7 +10,7 @@ const Navbar = (props: Props) => {
   const { data, loading } = useMeQuery();
   const [logout, { client }] = useLogoutMutation();
   return (
-    <Flex as="header" h="20" shadow="lg" color="white">
+    <Flex as="header" h="20" w="full" shadow="lg" color="white">
       <Flex
         as="nav"
         justify="space-between"
@@ -21,7 +21,7 @@ const Navbar = (props: Props) => {
         mx="auto"
       >
         <Text as="h2" fontSize="lg" fontWeight="bold">
-          <Link to="/">devugur - primeIT</Link>
+          <Link to="/">devugur - auth system</Link>
         </Text>
         <Flex gridGap="4" alignItems="center">
           <div>
@@ -37,7 +37,19 @@ const Navbar = (props: Props) => {
                 colorScheme="pink"
                 size="sm"
                 onClick={async () => {
-                  await logout();
+                  await logout({
+                    update: (cache, { data }) => {
+                      if (!data) {
+                        return null;
+                      }
+                      cache.writeQuery<MeQuery>({
+                        query: MeDocument,
+                        data: {
+                          me: null,
+                        },
+                      });
+                    },
+                  });
                   setAccessToken('');
                   await client!.resetStore();
                 }}

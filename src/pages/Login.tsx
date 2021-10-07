@@ -6,6 +6,7 @@ import { MeDocument, MeQuery, useLoginMutation } from '../generated/graphql';
 import { RouteComponentProps } from 'react-router';
 import { toErrorMap } from '../utils/toErrorMap';
 import { setAccessToken } from '../utils/accessToken';
+import { Link } from 'react-router-dom';
 
 interface Props extends RouteComponentProps {}
 
@@ -13,7 +14,7 @@ const Login = ({ history }: Props) => {
   const [login] = useLoginMutation();
 
   return (
-    <div>
+    <Box maxW="lg" mx="auto">
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={async (values, { setErrors }) => {
@@ -45,13 +46,16 @@ const Login = ({ history }: Props) => {
             <Box mt={4}>
               <InputField name="password" placeholder="password" label="Password" type="password" />
             </Box>
+            <Box mt={4} color="twitter.400">
+              <Link to="/register">Hesabınız yok mu? Hemen kaydolun!</Link>
+            </Box>
             <Button type="submit" colorScheme="teal" mt={4} isLoading={isSubmitting}>
               giriş yap
             </Button>
           </Form>
         )}
       </Formik>
-    </div>
+    </Box>
   );
 };
 

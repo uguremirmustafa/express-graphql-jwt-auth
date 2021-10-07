@@ -5,6 +5,7 @@ import InputField from '../components/InputField';
 import { useRegisterMutation } from '../generated/graphql';
 import { toErrorMap } from '../utils/toErrorMap';
 import { RouteComponentProps } from 'react-router';
+import { Link } from 'react-router-dom';
 
 interface Props extends RouteComponentProps {}
 
@@ -12,7 +13,7 @@ const Register = ({ history }: Props) => {
   const [register] = useRegisterMutation();
 
   return (
-    <div>
+    <Box maxW="lg" mx="auto">
       <Formik
         initialValues={{ email: '', username: '', password: '' }}
         onSubmit={async (values, { setErrors }) => {
@@ -34,13 +35,16 @@ const Register = ({ history }: Props) => {
             <Box mt={4}>
               <InputField name="password" placeholder="password" label="Password" type="password" />
             </Box>
+            <Box mt={4} color="twitter.400">
+              <Link to="/login">Hesabınız var mı? Giriş yapın!</Link>
+            </Box>
             <Button type="submit" colorScheme="teal" mt={4} isLoading={isSubmitting}>
               register
             </Button>
           </Form>
         )}
       </Formik>
-    </div>
+    </Box>
   );
 };
 

@@ -48,7 +48,7 @@
     <a href="https://github.com/uguremirmustafa/express-graphql-jwt-auth/issues">Request Feature</a>
   </p>
 </p>
-<a href="https://github.com/uguremirmustafa/express-graphql-jwt-auth">SERVER CODE WITH APOLLO-EXPRESS IS HERE</a>
+<a href="https://github.com/uguremirmustafa/graphql-express-jwt-auth-server">SERVER CODE WITH APOLLO-EXPRESS IS HERE</a>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
